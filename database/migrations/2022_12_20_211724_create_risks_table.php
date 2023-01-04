@@ -1,0 +1,52 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+class CreateRisksTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('risks', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+
+            $table->enum('rank',['1','2','3','4'])->nullable();
+            $table->text('name')->nullable();
+            $table->text('category')->nullable();
+            $table->text('description')->nullable();
+            $table->text('impact')->nullable();
+            $table->enum('probability',['1','2','3','4'])->nullable();
+            // $table->integer('status')->nullable();
+            $table->enum('status',['0','1','2','3','4'])->nullable();
+
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+
+            $table->string('mitigation_title',255)->nullable();
+            $table->text('mitigation_desc')->nullable();
+            $table->text('mitigation_responsible')->nullable();
+            $table->date('mitigation_start_date')->nullable();
+            $table->date('mitigation_deadline')->nullable();
+            $table->enum('mitigation_status',['0','1','2','3','4'])->nullable();
+
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('risks');
+    }
+}
