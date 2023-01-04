@@ -27,12 +27,14 @@
 
     <!-- js -->
     @yield('scripts')
-
     <script src="{{ asset('front/vendors/js/vendor.bundle.base.js') }}"></script>
     <script src="{{ asset('front/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('front/vendors/progressbar.js/progressbar.min.js') }}"></script>
     <script src="{{ asset('front/js/off-canvas.js') }}"></script>
     <script src="{{ asset('front/js/hoverable-collapse.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+        crossorigin="anonymous"></script>
+
     <!-- End custom js for this page-->
     <script>
         $('#logout-btn').click(function(e) {
@@ -40,25 +42,7 @@
             $('#logout-form').submit()
         })
     </script>
-    <script>
-        $('.edit-btn').click(function() {
-            let id = $(this).attr('data-id');
-            let name = $(this).attr('data-name');
-            let email = $(this).attr('data-email');
-            let password = $(this).attr('data-password');
-            let phone = $(this).attr('data-phone');
-            let role_id = $(this).attr('data-role_id');
-            let department_id = $(this).attr('data-department_id');
 
-            $("#edit-form input[name|='id']").val(id)
-            $("#edit-form input[name|='name']").val(name)
-            $("#edit-form input[name|='email']").val(email)
-            $("#edit-form input[name|='password']").val(password)
-            $("#edit-form input[name|='phone']").val(phone)
-            $("#edit-form input[name|='role_id']").val(role_id)
-            $("#edit-form input[name|='department_id']").val(department_id)
-        })
-    </script>
 
     <script>
         $('.edit-btn').click(function() {
@@ -78,17 +62,16 @@
         })
     </script>
 
-    {{-- <script>
-        let risk_status = document.getElementById("risk_status") // defult value
-        let mitigation_status = document.getElementById("mitigation_status") // select value
-        $('mitigation_status').change(function() {
-
+    <script>
+        $('#mitigation_status').change(function(e) {
+            e.preventDefault();
             Var value = 4 - $(this).find(':selected').val();
+            console.log(value);
 
-            $('risk_status').val(value)
+            $('#risk_status').val(value)
 
         })
-    </script> --}}
+    </script>
 </body>
 
 </html>

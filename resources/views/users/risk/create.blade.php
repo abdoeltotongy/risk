@@ -72,7 +72,7 @@
                                                                                         id="risk_status" readonly
                                                                                         max="4"> --}}
                                                                                     <select class="form-control"
-                                                                                        name="status">
+                                                                                        name="status" id="risk_status">
                                                                                         <option>0</option>
                                                                                         <option>1</option>
                                                                                         <option>2</option>
