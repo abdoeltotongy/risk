@@ -100,7 +100,7 @@
                                                                                         <div>
                                                                                             <div
                                                                                                 class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                                <p class="text-success">
+                                                                                                <p class="text-danger">
                                                                                                     {{ $opportunity->status }}/4
                                                                                                 </p>
                                                                                             </div>
@@ -136,7 +136,7 @@
                                                                                         <div>
                                                                                             <div
                                                                                                 class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                                <p class="text-danger">
+                                                                                                <p class="text-success">
                                                                                                     {{ $opportunity->capture_status }}/4
                                                                                                 </p>
                                                                                             </div>
@@ -148,7 +148,7 @@
                                                                                                 @elseif ($opportunity->capture_status == 1) style="width: 25% ; background-color: #e9ecef"
                                                                                                 @elseif($opportunity->capture_status == 2)  style="width: 50% ; background-color: #e9ecef"                                                                                                  style="width: 50%"
                                                                                                 @elseif($opportunity->capture_status == 3) style="width: 75% ; background-color: #e9ecef"
-                                                                                                @elseif($opportunity->capture_status == 4) style="width: 100% ; background-color: #e9ecef" @endif
+                                                                                                @elseif($opportunity->capture_status == 4) style="width: 100% ; background-color:var(--bg-success)" @endif
                                                                                                     aria-valuenow="0"
                                                                                                     aria-valuemin="0"
                                                                                                     aria-valuemax="100">

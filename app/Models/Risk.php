@@ -24,4 +24,8 @@ class Risk extends Model
     //     $risks = risks::where('id', '<=', $risk->id)->get();
     //     $riskCount = $risks->count();
     // }
+    public function scopeActive($query)
+    {
+        return $query->where('active', 1);
+    }
 }

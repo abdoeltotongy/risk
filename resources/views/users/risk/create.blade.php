@@ -67,6 +67,10 @@
                                                                             <div class="form-group row">
                                                                                 <div class="col-sm-12">
                                                                                     <label class="form-label">Status</label>
+                                                                                    {{-- <input type="number"
+                                                                                        class="form-control" name="status"
+                                                                                        id="risk_status" readonly
+                                                                                        max="4"> --}}
                                                                                     <select class="form-control"
                                                                                         name="status">
                                                                                         <option>0</option>
@@ -181,6 +185,7 @@
                                                                     <div class="form-group">
                                                                         <label class="form-label">Status</label>
                                                                         <select class="form-control"
+                                                                            id="mitigation_status"
                                                                             name="mitigation_status">
                                                                             <option>0</option>
                                                                             <option>1</option>

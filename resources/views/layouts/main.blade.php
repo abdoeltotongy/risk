@@ -77,27 +77,17 @@
             $('#delete-form').submit()
         })
     </script>
-    {{-- <script>
-        function defultStutesValue() {
 
-            let mitigation_status = document.getElementById("mitigation_status").value
-            let risk_stuts = document.getElementById("risk_stuts").value
-            if (mitigation_status.value == 0) {
-                risk_stuts.value == 4
-            }
-            elseif(mitigation_status.value == 1) {
-                risk_stuts.value == 3
-            }
-            elseif(mitigation_status.value == 2) {
-                risk_stuts.value == 2
-            }
-            elseif(mitigation_status.value == 3) {
-                risk_stuts.value == 1
-            }
-            elseif(mitigation_status.value == 4) {
-                risk_stuts.value == 0
-            }
-        }
+    {{-- <script>
+        let risk_status = document.getElementById("risk_status") // defult value
+        let mitigation_status = document.getElementById("mitigation_status") // select value
+        $('mitigation_status').change(function() {
+
+            Var value = 4 - $(this).find(':selected').val();
+
+            $('risk_status').val(value)
+
+        })
     </script> --}}
 </body>
 

@@ -29,8 +29,8 @@
                                                     <!-- small box -->
                                                     <div class="small-box bg-danger">
                                                         <div class="inner">
-                                                            {{-- <h3>{{ $risks->getRisksCount() }}</h3> --}}
-                                                            <h3>1</h3>
+                                                            <h3>{{ $count_risk }}</h3>
+                                                            {{-- <h3>1</h3> --}}
 
                                                             <p>Risks</p>
                                                         </div>
@@ -47,7 +47,9 @@
                                                     <!-- small box -->
                                                     <div class="small-box bg-danger" style="opacity: 0.5">
                                                         <div class="inner">
-                                                            <h3>0</h3>
+                                                            {{-- @if ($risks->mitigation_status == 0) --}}
+                                                            <h3>{{ $count_risk_mitigated }} </h3>
+                                                            {{-- @endif --}}
 
                                                             <p>Mitigated </p>
                                                         </div>
@@ -64,9 +66,9 @@
                                                     <!-- small box -->
                                                     <div class="small-box bg-success">
                                                         <div class="inner">
-                                                            <h3>53 </h3>
+                                                            <h3>{{ $count_opportunities }} </h3>
                                                             {{-- sup style="font-size: 20px">%</sup> --}}
-                                                            <p>opportunity </p>
+                                                            <p>Opportunity </p>
                                                         </div>
                                                         <div class="icon">
                                                             <i class="mdi mdi-chart-bar"></i>
@@ -81,7 +83,7 @@
                                                     <!-- small box -->
                                                     <div class="small-box bg-success" style="opacity: 0.5">
                                                         <div class="inner">
-                                                            <h3>44</h3>
+                                                            <h3>{{ $count_opportunities_captured }}</h3>
 
                                                             <p>Captured</p>
                                                         </div>
@@ -177,7 +179,7 @@
                                                                                             <div>
                                                                                                 <div
                                                                                                     class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                                    <p class="text-success">
+                                                                                                    <p class="text-danger">
                                                                                                         {{ $risk->status }}/4
                                                                                                     </p>
                                                                                                 </div>
@@ -213,7 +215,7 @@
                                                                                             <div>
                                                                                                 <div
                                                                                                     class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                                    <p class="text-danger">
+                                                                                                    <p class="text-success">
                                                                                                         {{ $risk->mitigation_status }}/4
                                                                                                     </p>
                                                                                                 </div>
@@ -221,12 +223,11 @@
                                                                                                     class="progress progress-md bg-success">
                                                                                                     <div class="progress-bar"
                                                                                                         role="progressbar"
-                                                                                                        {{-- @if ($risk->mitigation_status == 1) style="width: 25%; background-color: #e9ecef" --}}
                                                                                                         @if ($risk->mitigation_status == 0) style="width: 0% ; background-color: #e9ecef"
                                                                                                         @elseif ($risk->mitigation_status == 1) style="width: 25% ; background-color: #e9ecef"
                                                                                                         @elseif($risk->mitigation_status == 2)  style="width: 50% ; background-color: #e9ecef"                                                                                                  style="width: 50%"
                                                                                                         @elseif($risk->mitigation_status == 3) style="width: 75% ; background-color: #e9ecef"
-                                                                                                        @elseif($risk->mitigation_status == 4) style="width: 100% ; background-color: #e9ecef" @endif
+                                                                                                        @elseif($risk->mitigation_status == 4) style="width: 100% ; background-color: var(--bg-success)" @endif
                                                                                                         aria-valuenow="0"
                                                                                                         aria-valuemin="0"
                                                                                                         aria-valuemax="100">

@@ -21,6 +21,12 @@ class HomeController extends Controller
         $data['risks'] = Risk::get()->all();
         $data['opportunities'] = Opportunity::get()->all();
 
+        $data['count_risk'] = Risk::all()->count();
+        $data['count_risk_mitigated'] = Risk::where('mitigation_status' , '4')->count();
+        $data['count_opportunities'] = Opportunity::all()->count();
+        $data['count_opportunities_captured'] = Opportunity::where('capture_status' , '4')->count();
+
+
 
         return view('users.index')->with($data);
     }

@@ -98,7 +98,7 @@
                                                                                         <div>
                                                                                             <div
                                                                                                 class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                                <p class="text-success">
+                                                                                                <p class="text-danger">
                                                                                                     {{ $risk->status }}/4
                                                                                                 </p>
                                                                                             </div>
@@ -134,7 +134,7 @@
                                                                                         <div>
                                                                                             <div
                                                                                                 class="d-flex justify-content-between align-items-center mb-1 max-width-progress-wrap">
-                                                                                                <p class="text-danger">
+                                                                                                <p class="text-success">
                                                                                                     {{ $risk->mitigation_status }}/4
                                                                                                 </p>
                                                                                             </div>
@@ -147,7 +147,7 @@
                                                                                                     @elseif ($risk->mitigation_status == 1) style="width: 25% ; background-color: #e9ecef"
                                                                                                     @elseif($risk->mitigation_status == 2)  style="width: 50% ; background-color: #e9ecef"                                                                                                  style="width: 50%"
                                                                                                     @elseif($risk->mitigation_status == 3) style="width: 75% ; background-color: #e9ecef"
-                                                                                                    @elseif($risk->mitigation_status == 4) style="width: 100% ; background-color: #e9ecef" @endif
+                                                                                                    @elseif($risk->mitigation_status == 4) style="width: 100% ; background-color: var(--bg-success)" @endif
                                                                                                     aria-valuenow="0"
                                                                                                     aria-valuemin="0"
                                                                                                     aria-valuemax="100">
